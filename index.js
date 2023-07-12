@@ -29,7 +29,7 @@ function calculateSum(counter){
 // }
 
 function handleFirstRequest(req, res) {
-    var counter = req.body.counter;
+    var counter = req.query.counter;
 
     var calculatedSum=calculateSum(counter);
     //var calculatedMul=calculateMul(counter);
@@ -59,8 +59,8 @@ function handleFirstRequest(req, res) {
 
 // app.get('/', givePage);
 
-//app.get('/handleSum', handleFirstRequest)
-app.post('/handleSum', handleFirstRequest)
+app.get('/handleSum', handleFirstRequest)
+//app.post('/handleSum', handleFirstRequest)
 
 function started(){
     console.log(`Example app listening on port ${port}`)
